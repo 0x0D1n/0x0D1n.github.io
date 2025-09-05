@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Toi aussi, tu es fasciné par les chiffres ? Découvre leur simplicité et leur magie !">
+    <meta name="author" content="0x0d1n">
+    <title>Simplement des chiffres...</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            font-family: monospace;
+        }
+        #random_number {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <p id="random_number"></p>
+    <!-- 
+    <a href="./secret.txt">Is it a secret ?</a>
+    -->
+    <script>
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function generateNumbers() {
+            let numbers = [];
+            for (let i = 0; i < 5; i++) {
+                numbers.push(getRandomInt(1, 10000));
+            }
+            document.getElementById("random_number").innerText = numbers.join(" <> ");
+        }
+
+        generateNumbers();
+    </script>
+</body>
+</html>
